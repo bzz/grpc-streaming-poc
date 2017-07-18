@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package streaming;
+
+service StreamingService {
+  rpc ParseUAST(Empty) returns (stream FileUAST) {}
+}
+
+message FileUAST {
+  string file = 1;
+  string uast = 2;
+}
+
+message Empty {}
